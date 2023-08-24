@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    overflow: auto;
+    height: 100vh;
+  }
+  
+  /* 采用粘性定位 
+    相对于视口，在 视口滚动到元素 top 距离小于 0px 之前，元素为相对定位。
+    之后，元素将固定在与顶部距离 10px 的位置，直到视口回滚到阈值以下
+   */
+  .sticky-content {
+    position: sticky;
+    height: 100vh;
+    top: 0px;
+  }
+  
+  /* 第一个盒子 高度，背景色 渐变 左下方*/
+  .section1 {
+    height: 3000px;
+  }
+  
+  .section1 .sticky-content {
+    background: linear-gradient(to left bottom, red, #42447a);
+  }
+  
+  /* 第二个盒子 高度  背景纯色 */
+  .section2 {
+    height: 4000px;
+  }
+  
+  .section2 .sticky-content {
+    background-color: #167fc0;
+  }
+  
+  /* 第三个盒子 高度 背景色 渐变*/
+  .section3 {
+    height: 5000px;
+  }
+  
+  .section3 .sticky-content {
+    background: linear-gradient(to left bottom, #c4d9f3, #fab244);
+  }
+  
+  /* 内容 */
+  
+  /* 第一个盒子内容   文字  */
+  .intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 240px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+    color: #fff;
+    /* 提高性能，提前告知浏览器我要变化 */
+    will-change: opacity;
+  }
+  
+  /* 第二个盒子 三个图片 */
+  .image-mac-desktop {
+    width: 100vw;
+    will-change: transform;
+  }
+  
+  .image-mac-safari {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    will-change: transform;
+    transform: translate3d(100%, 100%, 0);
+  }
+  
+  .image-mac-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    will-change: transform;
+    transform: translate3d(-100%, -100%, 0);
+  }
+  
+  /* 第三个盒子   图片 */
+  .image-mac-desktop2 {
+    width: 1200px;
+    will-change: transform;
+  }
+  
